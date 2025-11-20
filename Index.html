@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lady Glosh — Fashion & Design</title>
+  <meta name="description" content="Lady Glosh Fashion & Design — curated links to worldwide brands with a slick quick-access slide for Sign In / Register / Feedback" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💃</text></svg>">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo-blob" aria-hidden="true"></div>
+      <div>
+        <h1>Lady Glosh</h1>
+        <p class="tag">Fashion & Design — Worldwide curation</p>
+      </div>
+    </div>
+
+    <nav class="top-nav" aria-label="primary">
+      <ul>
+        <li><a href="#brands">Brands</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a id="quick-access-trigger" class="button ghost" href="#quick">Quick Access</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-card">
+        <h2>Wear the future.</h2>
+        <p>Curated links to global fashion houses — browse and jump to your favorite stores. Fast. Stylish. Unique.</p>
+        <p class="cta-row">
+          <a class="button primary" href="#brands">Explore Brands</a>
+          <a class="button" id="open-quick-deck" href="#quick">Quick Sign</a>
+        </p>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <!-- decorative pattern -->
+        <div class="pattern"></div>
+      </div>
+    </section>
+
+    <section id="brands" class="brands">
+      <h3>Featured partners</h3>
+      <p class="sub">Jump straight to their storefronts</p>
+
+      <div class="brand-grid" role="list">
+        <a class="brand-card" role="listitem" href="https://www.nike.com" target="_blank" rel="noopener noreferrer">
+          <div class="brand-logo">NIKE</div>
+          <small>Sport & street</small>
+        </a>
+
+        <a class="brand-card" role="listitem" href="https://www.zara.com" target="_blank" rel="noopener noreferrer">
+          <div class="brand-logo">ZARA</div>
+          <small>Trendy & ready-to-wear</small>
+        </a>
+
+        <a class="brand-card" role="listitem" href="https://www.adidas.com" target="_blank" rel="noopener noreferrer">
+          <div class="brand-logo">adidas</div>
+          <small>Performance style</small>
+        </a>
+
+        <a class="brand-card" role="listitem" href="https://www.hm.com" target="_blank" rel="noopener noreferrer">
+          <div class="brand-logo">H&M</div>
+          <small>Affordable fashion</small>
+        </a>
+
+        <a class="brand-card" role="listitem" href="https://www.uniqlo.com" target="_blank" rel="noopener noreferrer">
+          <div class="brand-logo">UNIQLO</div>
+          <small>Minimal essentials</small>
+        </a>
+
+        <a class="brand-card" role="listitem" href="https://www.gucci.com" target="_blank" rel="noopener noreferrer">
+          <div class="brand-logo">GUCCI</div>
+          <small>Luxury & couture</small>
+        </a>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h3>About Lady Glosh</h3>
+      <p>Lady Glosh is a fast, elegant aggregator linking you to top global brands. This demo focuses on a unique quick-access slide (click the floating button) that houses Sign In / Register / Feedback and a simulated sign-out flow. No backend required — sign state and feedback persist locally in your browser for demo purposes.</p>
+    </section>
+  </main>
+
+  <!-- Floating Quick Deck Toggle -->
+  <button id="quick-toggle" class="quick-toggle" aria-expanded="false" aria-controls="quick-deck" title="Open quick access">
+    <span class="fg">⚡</span>
+    <span class="label">Quick</span>
+  </button>
+
+  <!-- Slide-in Quick Deck -->
+  <aside id="quick-deck" class="quick-deck" aria-hidden="true">
+    <div class="deck-header">
+      <h4>Quick Access</h4>
+      <button id="close-quick" class="close" aria-label="Close quick access">✕</button>
+    </div>
+
+    <div class="deck-body">
+      <div id="user-area" class="user-area">
+        <!-- dynamically filled by JS -->
+      </div>
+
+      <div class="actions">
+        <button id="show-signin" class="small">Sign In</button>
+        <button id="show-register" class="small">Register</button>
+        <button id="show-feedback" class="small">Feedback</button>
+      </div>
+
+      <form id="signin-form" class="form hidden" aria-hidden="true">
+        <h5>Sign In</h5>
+        <label>
+          Email
+          <input type="email" id="signin-email" required placeholder="you@example.com" />
+        </label>
+        <label>
+          Password
+          <input type="password" id="signin-pass" required placeholder="••••••" />
+        </label>
+        <div class="form-row">
+          <button type="submit" class="button primary small">Sign In</button>
+        </div>
+      </form>
+
+      <form id="register-form" class="form hidden" aria-hidden="true">
+        <h5>Register</h5>
+        <label>
+          Name
+          <input type="text" id="reg-name" required placeholder="Your name" />
+        </label>
+        <label>
+          Email
+          <input type="email" id="reg-email" required placeholder="you@example.com" />
+        </label>
+        <label>
+          Password
+          <input type="password" id="reg-pass" required placeholder="Create password" />
+        </label>
+        <div class="form-row">
+          <button type="submit" class="button primary small">Create</button>
+        </div>
+      </form>
+
+      <form id="feedback-form" class="form hidden" aria-hidden="true">
+        <h5>Send Feedback</h5>
+        <label>
+          Feedback
+          <textarea id="feedback-text" required placeholder="Tell us what you love or how we can improve..." rows="4"></textarea>
+        </label>
+        <div class="form-row">
+          <button type="submit" class="button small">Send</button>
+        </div>
+      </form>
+
+      <div id="feedback-list" class="feedback-list"></div>
+    </div>
+
+    <div class="deck-footer">
+      <small>Lady Glosh — Demo quick deck</small>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Lady Glosh Fashion & Design</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
