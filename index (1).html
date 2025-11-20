@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fashion Media Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Fashion Media Gallery</h1>
+    <p class="subtitle">Images and videos loaded from data.json (replace with your own data URIs or remote URLs)</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <input id="search" type="search" placeholder="Filter by title, description or tag" />
+      <label><input id="showVideos" type="checkbox" checked /> Show videos</label>
+    </section>
+
+    <section id="gallery" class="gallery" aria-live="polite">
+      <!-- Cards will be injected by script.js -->
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" role="dialog" aria-hidden="true" aria-label="Media preview">
+    <div class="modal-backdrop" id="modalClose"></div>
+    <div class="modal-content" role="document">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close">✕</button>
+      <div id="modalBody" class="modal-body"></div>
+      <div id="modalMeta" class="modal-meta"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
